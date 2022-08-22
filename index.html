@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 头部盒子文字展示 -->
+    <header>
+        <h1>可视化数据展示-ECharts</h1>
+    </header>
+    <div class="showTime"></div>
+    <script>
+        var t=null;
+        t=setTimeout(time,1000);//开始运行
+        function time(){
+            clearTimeout(t)//清除定时器
+            dt=new Date();
+            var y=dt.getFullYear();
+            var mt=dt.getMonth()+1;
+            var day=dt.getDate();
+            var h=dt.getHours();
+            var m=dt.getMinutes();
+            var s=dt.getSeconds();
+            document.querySelector(".showTime").innerHTML=
+            "当前时间:"+
+            y+
+            "年"+
+            mt+
+            "月"+
+            day+
+            "日"+
+            "-"+
+            h+
+            "时"+
+            m+
+            "分"+
+            s+
+            "秒";
+            t=setTimeout(time,1000);//设置定时器 循环运行
+        }
+    </script>
+    <!-- 主体部分 -->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2>柱形图-专业展示</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>折线图-男女就业对比 
+                    <a href="javascript:;">计算机</a>
+                    <a href="javascript:;">金融</a>
+                </h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie">
+                <h2>饼图-就业占比</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- 中间数字模块 -->
+            <div class="num">
+                <div class="num-hd">
+                    <ul>
+                        <li>121212</li>
+                        <li>105859</li>
+                    </ul>
+                </div>
+                <div class="num-bd">
+                    <ul>
+                        <li>毕业生总人数</li>
+                        <li>工作市场需求</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>  
+        <div class="column">
+            <div class="panel bar2">
+                <h2>柱形图-就业率展示</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line2">
+                <h2>折线图-专业就业</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie2">
+                <h2>饼图-就业地区</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/china.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
